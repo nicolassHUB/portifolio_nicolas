@@ -11,6 +11,7 @@
 html {
     width: 100%;
     overflow-x: hidden;
+
     scroll-behavior: smooth;
     scroll-padding-top: 60px;
 }
@@ -18,8 +19,11 @@ html {
 body {
     width: 100%;
     min-height: 100vh;
+
     padding-top: 60px;
+
     line-height: 1.3;
+
     overflow-x: hidden;
 
     background-color: var(--bg-principal);
@@ -41,13 +45,16 @@ a {
 
 /* =========================================================
    ROOT
+   LIGHT = TEMA PRINCIPAL DO SITE
 ========================================================= */
 
 :root {
-    /* CORES PRINCIPAIS */
+
+    /* ROXO */
 
     --roxo: #7c3aed;
     --roxo-escuro: #5b21b6;
+
 
     /* FUNDOS */
 
@@ -57,15 +64,18 @@ a {
     --bg-hero: #0f0f0f;
     --bg-card: #151515;
 
+
     /* TEXTOS */
 
     --texto-principal: #000000;
     --texto-secundario: #777777;
     --texto-claro: #ffffff;
 
+
     /* BORDAS */
 
     --borda: #2a2a2a;
+
 
     /* FONTES */
 
@@ -83,6 +93,7 @@ a {
         Arial,
         sans-serif;
 
+
     /* CONTAINER */
 
     --container: 1200px;
@@ -90,13 +101,14 @@ a {
 
 
 /* =========================================================
-   TEMA ESCURO
-   Detecta automaticamente o Dark Mode do celular
+   DARK MODE
+   SOMENTE QUANDO O SISTEMA DA PESSOA ESTIVER EM DARK
 ========================================================= */
 
 @media (prefers-color-scheme: dark) {
 
     :root {
+
         --bg-principal: #0f0f0f;
         --bg-secundario: #151515;
         --bg-terciario: #202020;
@@ -125,7 +137,7 @@ h3,
 h4,
 a,
 .titulo-principal,
-.Nicolas__botao {
+.Nicolas__button {
     font-family: var(--font-titulo);
     font-weight: 700;
     text-transform: uppercase;
@@ -193,7 +205,7 @@ p,
 
 
 /* =========================================================
-   NAVIGATION
+   NAVEGAÇÃO
 ========================================================= */
 
 .Nicolas__navigation {
@@ -514,14 +526,6 @@ p,
    BOTÕES
 ========================================================= */
 
-.button__column {
-    display: flex;
-
-    gap: 20px;
-
-    flex-wrap: wrap;
-}
-
 .Nicolas__button {
     padding: 14px 30px;
 
@@ -658,11 +662,6 @@ p,
     background: var(--roxo-escuro);
 }
 
-
-/* =========================================================
-   REMOVE COMPLETAMENTE AS SETAS
-========================================================= */
-
 ::-webkit-scrollbar-button {
     width: 0 !important;
     height: 0 !important;
@@ -680,40 +679,6 @@ p,
     display: none !important;
 
     background: transparent !important;
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    ::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: var(--bg-secundario);
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: var(--roxo);
-
-        border: 0;
-        border-radius: 10px;
-
-        min-height: 30px;
-    }
-
-    ::-webkit-scrollbar-button,
-    ::-webkit-scrollbar-button:single-button {
-        width: 0 !important;
-        height: 0 !important;
-
-        display: none !important;
-    }
-
 }
 
 
@@ -826,38 +791,13 @@ p,
 
 
 /* =========================================================
-   RESPONSIVIDADE
-========================================================= */
-
-
-/* =========================================================
-   TELAS MÉDIAS
-========================================================= */
-
-@media (max-width: 1200px) {
-
-    .Nicolas__navigation,
-    .Nicolas__hero,
-    .Nicolas__projetos,
-    .Nicolas__about,
-    .Nicolas__footer {
-        max-width: 100%;
-    }
-
-}
-
-
-/* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 898px) {
 
-    /* HEADER */
-
     .Nicolas__navigation {
         padding: 18px 25px;
-
         gap: 20px;
     }
 
@@ -886,7 +826,6 @@ p,
 
     .Nicolas__desc-hero {
         width: 100%;
-
         gap: 10px;
     }
 
@@ -926,7 +865,6 @@ p,
 
     .Nicolas__img {
         width: 100%;
-
         height: auto;
 
         max-height: 450px;
@@ -1007,7 +945,6 @@ p,
     .socials__column {
         align-items: center;
     }
-
 }
 
 
@@ -1024,6 +961,9 @@ p,
 
         justify-content: flex-start;
     }
+
+
+    /* MENU */
 
     .box__bar {
         position: relative;
@@ -1046,6 +986,7 @@ p,
 
         cursor: pointer;
     }
+
 
     .Nicolas__navigation {
         position: fixed;
@@ -1076,9 +1017,11 @@ p,
         transition: transform 0.3s ease;
     }
 
+
     .Nicolas__header.menu-open .Nicolas__navigation {
         transform: translateX(0);
     }
+
 
     .Nicolas__navigation > a {
         width: 100%;
@@ -1100,7 +1043,8 @@ p,
         color: var(--roxo);
     }
 
-    /* X NO CANTO SUPERIOR ESQUERDO */
+
+    /* X */
 
     .Nicolas__header.menu-open .box__bar {
         position: fixed;
@@ -1114,6 +1058,58 @@ p,
 
     .Nicolas__header.menu-open .box__bar i::before {
         content: "\f00d";
+    }
+
+
+    /* HERO */
+
+    .Nicolas__hero {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    /* SOBRE */
+
+    .Nicolas__about {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    /* PROJETOS */
+
+    .projetos__section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    /* SCROLLBAR */
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--bg-secundario);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--roxo);
+
+        border: 0;
+        border-radius: 10px;
+
+        min-height: 30px;
+    }
+
+    ::-webkit-scrollbar-button,
+    ::-webkit-scrollbar-button:single-button {
+        width: 0 !important;
+        height: 0 !important;
+
+        display: none !important;
     }
 }
 
@@ -1129,21 +1125,6 @@ p,
         padding-right: 20px;
     }
 
-    .Nicolas__hero {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .Nicolas__about {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .projetos__section {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
     .Nicolas__navigation > a {
         font-size: 14px;
     }
@@ -1151,6 +1132,4 @@ p,
     .Nicolas__button {
         padding: 11px 18px;
     }
-
 }
-
