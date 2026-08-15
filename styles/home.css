@@ -8,18 +8,26 @@
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px;
+}
+
 body {
     width: 100%;
     min-height: 100vh;
     padding-top: 60px;
     line-height: 1.3;
     overflow-x: hidden;
-}
 
-html {
-    width: 100%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
 
 section {
@@ -36,20 +44,74 @@ a {
 ========================================================= */
 
 :root {
+    /* CORES PRINCIPAIS */
+
     --roxo: #7c3aed;
     --roxo-escuro: #5b21b6;
 
-    --preto: #000;
-    --preto-claro: #151515;
-    --cinza-escuro: #202020;
-    --cinza: #777;
+    /* FUNDOS */
 
-    --branco: #fff;
+    --bg-principal: #ffffff;
+    --bg-secundario: #151515;
+    --bg-terciario: #202020;
+    --bg-hero: #0f0f0f;
+    --bg-card: #151515;
 
-    --font-titulo: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-texto: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* TEXTOS */
+
+    --texto-principal: #000000;
+    --texto-secundario: #777777;
+    --texto-claro: #ffffff;
+
+    /* BORDAS */
+
+    --borda: #2a2a2a;
+
+    /* FONTES */
+
+    --font-titulo:
+        "Roboto Condensed",
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    --font-texto:
+        "Roboto",
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    /* CONTAINER */
 
     --container: 1200px;
+}
+
+
+/* =========================================================
+   TEMA ESCURO
+   Detecta automaticamente o Dark Mode do celular
+========================================================= */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --bg-principal: #0f0f0f;
+        --bg-secundario: #151515;
+        --bg-terciario: #202020;
+        --bg-hero: #080808;
+        --bg-card: #151515;
+
+        --texto-principal: #ffffff;
+        --texto-secundario: #a1a1aa;
+        --texto-claro: #ffffff;
+
+        --borda: #2a2a2a;
+
+        --roxo: #8b5cf6;
+        --roxo-escuro: #6d28d9;
+    }
 }
 
 
@@ -70,7 +132,7 @@ a,
 }
 
 h4 {
-    color: #313442;
+    color: var(--texto-secundario);
 }
 
 p,
@@ -99,8 +161,8 @@ p,
     justify-content: center;
     align-items: center;
 
-    background-color: var(--cinza-escuro);
-    color: white;
+    background-color: var(--bg-terciario);
+    color: var(--texto-claro);
 }
 
 
@@ -119,7 +181,7 @@ p,
     border: none;
 
     background: transparent;
-    color: white;
+    color: var(--texto-claro);
 
     align-items: center;
     justify-content: center;
@@ -146,11 +208,11 @@ p,
 
     gap: 30px;
 
-    color: white;
+    color: var(--texto-claro);
 }
 
 .Nicolas__navigation > a {
-    color: white;
+    color: var(--texto-claro);
 
     font-size: 12px;
 
@@ -171,8 +233,8 @@ p,
 
     width: 100%;
 
-    background-color: #0f0f0f;
-    color: white;
+    background-color: var(--bg-hero);
+    color: var(--texto-claro);
 }
 
 .Nicolas__hero {
@@ -238,7 +300,7 @@ p,
 
     gap: 30px;
 
-    background-color: var(--cinza-escuro);
+    background-color: var(--bg-terciario);
 }
 
 .Nicolas__socials a {
@@ -248,7 +310,7 @@ p,
 }
 
 .Nicolas__socials i {
-    color: white;
+    color: var(--texto-claro);
 
     font-size: 20px;
 
@@ -276,7 +338,7 @@ p,
     width: 100%;
     height: 35px;
 
-    background-color: white;
+    background-color: var(--bg-principal);
 
     clip-path: polygon(
         0 100%,
@@ -299,8 +361,8 @@ p,
     display: flex;
     justify-content: center;
 
-    background-color: var(--preto-claro);
-    color: white;
+    background-color: var(--bg-secundario);
+    color: var(--texto-claro);
 }
 
 .Nicolas__projetos {
@@ -316,6 +378,8 @@ p,
 
     font-size: 24px;
     font-weight: 700;
+
+    color: var(--texto-claro);
 }
 
 .projetos__column {
@@ -358,7 +422,7 @@ p,
 .projeto__card h4 {
     margin: 0 0 5px;
 
-    color: #777;
+    color: var(--texto-secundario);
 
     font-size: 12px;
     font-weight: 700;
@@ -369,7 +433,7 @@ p,
 .projeto__card p {
     margin: 0;
 
-    color: white;
+    color: var(--texto-claro);
 
     font-size: 14px;
     line-height: 1.25;
@@ -397,8 +461,8 @@ p,
     justify-content: center;
     align-items: center;
 
-    background-color: #000;
-    color: white;
+    background-color: var(--bg-hero);
+    color: var(--texto-claro);
 }
 
 .Nicolas__contato {
@@ -426,6 +490,8 @@ p,
 .Nicolas__contato h3 {
     margin: 0 0 12px;
 
+    color: var(--texto-claro);
+
     font-size: 22px;
     font-weight: 700;
 }
@@ -435,6 +501,8 @@ p,
     max-width: 500px;
 
     margin: 0 0 25px;
+
+    color: var(--texto-claro);
 
     font-size: 14px;
     line-height: 1.4;
@@ -460,7 +528,7 @@ p,
     border: none;
 
     background-color: var(--roxo);
-    color: white;
+    color: var(--texto-claro);
 
     font-size: 12px;
     font-weight: 700;
@@ -488,7 +556,7 @@ p,
     display: flex;
     justify-content: center;
 
-    background-color: #fff;
+    background-color: var(--bg-principal);
 }
 
 .Nicolas__about {
@@ -544,7 +612,7 @@ p,
 .about__desc h1 {
     margin: 0 0 22px;
 
-    color: #000;
+    color: var(--texto-principal);
 
     font-size: 28px;
     font-weight: 700;
@@ -556,7 +624,7 @@ p,
 
     margin: 0 0 22px;
 
-    color: #111;
+    color: var(--texto-principal);
 
     font-size: 14px;
     line-height: 1.4;
@@ -569,24 +637,13 @@ p,
    SCROLLBAR
 ========================================================= */
 
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 60px;
-}
-
-/* Barra */
-
 ::-webkit-scrollbar {
     width: 7px;
 }
 
-/* Fundo da barra */
-
 ::-webkit-scrollbar-track {
-    background: #151515;
+    background: var(--bg-secundario);
 }
-
-/* Parte que desliza */
 
 ::-webkit-scrollbar-thumb {
     background: var(--roxo);
@@ -596,8 +653,6 @@ html {
 
     min-height: 40px;
 }
-
-/* Hover */
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--roxo-escuro);
@@ -617,8 +672,6 @@ html {
     background: transparent !important;
     border: none !important;
 }
-
-/* Remove qualquer variação das setas */
 
 ::-webkit-scrollbar-button:single-button {
     width: 0 !important;
@@ -641,7 +694,7 @@ html {
     }
 
     ::-webkit-scrollbar-track {
-        background: #151515;
+        background: var(--bg-secundario);
     }
 
     ::-webkit-scrollbar-thumb {
@@ -671,10 +724,10 @@ html {
 .footer__area {
     width: 100%;
 
-    border-top: 1px solid #2a2a2a;
+    border-top: 1px solid var(--borda);
 
-    background-color: #151515;
-    color: #fff;
+    background-color: var(--bg-secundario);
+    color: var(--texto-claro);
 }
 
 .Nicolas__footer {
@@ -705,7 +758,7 @@ html {
 }
 
 .footer__nav a {
-    color: #fff;
+    color: var(--texto-claro);
 
     font-size: 14px;
     font-weight: 700;
@@ -734,7 +787,7 @@ html {
 .socials__column h4 {
     margin: 0 0 15px;
 
-    color: white;
+    color: var(--texto-claro);
 
     font-size: 15px;
     font-weight: 700;
@@ -758,8 +811,8 @@ html {
 
     border-radius: 50%;
 
-    background-color: #222;
-    color: #fff;
+    background-color: var(--bg-terciario);
+    color: var(--texto-claro);
 
     transition:
         background-color 0.2s ease,
@@ -768,7 +821,7 @@ html {
 
 .footer__socials a:hover {
     background-color: var(--roxo);
-    color: #fff;
+    color: var(--texto-claro);
 }
 
 
@@ -987,7 +1040,7 @@ html {
         border: none;
 
         background: transparent;
-        color: white;
+        color: var(--texto-claro);
 
         font-size: 20px;
 
@@ -1013,7 +1066,7 @@ html {
         align-items: flex-start;
         justify-content: flex-start;
 
-        background-color: #151515;
+        background-color: var(--bg-secundario);
 
         overflow-y: auto;
         overflow-x: hidden;
@@ -1035,7 +1088,7 @@ html {
         display: flex;
         align-items: center;
 
-        color: white;
+        color: var(--texto-claro);
 
         font-size: 15px;
         font-weight: 700;
@@ -1100,3 +1153,4 @@ html {
     }
 
 }
+
