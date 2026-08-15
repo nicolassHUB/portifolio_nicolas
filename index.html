@@ -1,166 +1,442 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     />
-    <script src="https://kit.fontawesome.com/f820dbb5aa.js" crossorigin="anonymous"></script>
+
+    <script
+        src="https://kit.fontawesome.com/f820dbb5aa.js"
+        crossorigin="anonymous">
+    </script>
+
     <link rel="stylesheet" href="styles/home.css">
+
     <title>NicolasHenrique</title>
 </head>
+
 <body>
+
+    <!-- HEADER -->
+
     <header class="Nicolas__header">
 
-    <div class="box__bar">
-        <i class="fa-solid fa-bars"></i>
-    </div>
+        <div class="box__bar">
+            <i class="fa-solid fa-bars"></i>
+        </div>
 
-    <nav class="Nicolas__navigation">
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
-    </nav>
+        <nav class="Nicolas__navigation">
+
+            <a href="#inicio" data-i18n="nav.home">
+                Início
+            </a>
+
+            <a href="#sobre" data-i18n="nav.about">
+                Sobre
+            </a>
+
+            <a href="#projetos" data-i18n="nav.projects">
+                Projetos
+            </a>
+
+            <a href="#contato" data-i18n="nav.contact">
+                Contato
+            </a>
+
+        </nav>
 
     </header>
+
+
     <main>
-        <section class="Nicolas__section-hero" id="inicio">
-            <div class="Nicolas__hero">
-                <div class="oi">
-               <div class="Nicolas__desc-hero">
-                    <p class="titulo-principal">NICOLAS HENRIQUE</p>
-                    <h1>DESENVOLVEDOR DE SOFTWARE</h1>
-                    <p class="hero__desc">O desenvolvedor Nicolas Henrique usa seu domínio em Python e IA para criar sites e aplicativos inovadores, focado em impulsionar o futuro da tecnologia.</p>
-                </div>
-              
-                <div class="Nicolas__socials">
 
-                    <a href="https://www.instagram.com/nilasnooff/" target="_blank" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
+        <!-- HERO -->
 
-                    <a href="https://www.linkedin.com/in/nicolas-henrique-b53418402/" target="_blank" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-
-                    <a href="https://github.com/nicolassHUB" target="_blank" aria-label="GitHub">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-
-                </div>
-                </div>
-             
-            </div>
-        </section>
-        <section class="about__section" id="sobre">
-    <div class="Nicolas__about">
-
-        <div class="Nicolas__img">
-            <img src="assets/n.png" alt="Nicolas">
-        </div>
-
-        <div class="about__desc">
-            <h1>DESENVOLVEDOR DE SOFTWARE</h1>
-
-            <p>
-                Sou Nicolas Henrique, tenho 20 anos e curso Análise e Desenvolvimento de Sistemas na PUC Minas. 
-                Sou fascinado por tecnologia, procuro dominar Python e focado em criar sites, aplicativos e soluções com Inteligência Artificial. 
-                Busco sempre evoluir participando de palestras e projetos práticos para transformar ideias em códigos eficientes.
-            </p>
-            <button onclick="window.open('assets/Curriculo de Nicolas.pdf')" class="Nicolas__button">
-                CURRÍCULO
-            </button>
-        </div>
-
-    </div>
-        </section>
-        <section class="projetos__section" id="projetos">
-            <div class="Nicolas__projetos">
-                <h1>MELHORES PROJETOS</h1>
-                <div class="projetos__column">
-                    <div class="projeto__card">
-                        <div class="projeto__bg">
-                            <img class="projeto__img" src="assets/marvels_spider_man_2_peter_parke.width-1000.format-webp.webp"/>
-                        </div>
-                        <h4>APLICATIVO - ANDAMENTO</h4>
-                        <p>A história do Quarteto Fantástico com o Pantera Negra e Wakanda, explicada.</p>
-                    </div>
-                     <div class="projeto__card">
-                        <div class="projeto__bg">
-                            <img class="projeto__img" src="assets/marvels_spider_man_2_peter_parke.width-1000.format-webp.webp"/>
-                        </div>
-                        <h4>LANDING PAGE</h4>
-                        <p>A história do Quarteto Fantástico com o Pantera Negra e Wakanda, explicada.</p>
-                    </div>
-                     <div class="projeto__card">
-                        <div class="projeto__bg">
-                            <img class="projeto__img" src="assets/marvels_spider_man_2_peter_parke.width-1000.format-webp.webp"/>
-                        </div>
-                        <h4>LANDING PAGE</h4>
-                        <p>A história do Quarteto Fantástico com o Pantera Negra e Wakanda, explicada.</p>
-                    </div>
-                     <div class="projeto__card">
-                        <div class="projeto__bg">
-                            <img class="projeto__img" src="assets/marvels_spider_man_2_peter_parke.width-1000.format-webp.webp"/>
-                        </div>
-                        <h4>LANDING PAGE</h4>
-                        <p>A história do Quarteto Fantástico com o Pantera Negra e Wakanda, explicada.</p>
-                    </div>
-
-                </div>
-                
-            </div>
-        </section>
-        <section class="contato__section" id="contato">
-    <div class="Nicolas__contato">
-        <p class="contato__titulo">NICOLAS HENRIQUE</p>
-
-        <h3>Gostou do meu trabalho? <br> Vamos criar algo incrível juntos!</h3>
-
-        <p class="contato__descricao">
-            Estou disponível para novos projetos, freelas e parcerias. Escolha o melhor canal para conversarmos.
-        </p>
-
-       <a
-        href="https://wa.me/5531987164020"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="Nicolas__button"
+        <section
+            class="Nicolas__section-hero"
+            id="inicio"
         >
-        CONTRATAR
-        </a>
-    </div>
-        </section>
-    </main>
-    <footer class="footer__area">
-        <div class="Nicolas__footer">
-            <div class="footer__nav">
-                <a href="inicio">INICIO</a>
-                <a href="sobre">SOBRE</a>
-                <a href="projetos">PROJETOS</a>
-                <a href="contato">CONTATO</a>
+
+            <div class="Nicolas__hero">
+
+                <div class="oi">
+
+                    <div class="Nicolas__desc-hero">
+
+                        <p class="titulo-principal">
+                            NICOLAS HENRIQUE
+                        </p>
+
+                        <h1 data-i18n="hero.title">
+                            DESENVOLVEDOR DE SOFTWARE
+                        </h1>
+
+                        <p
+                            class="hero__desc"
+                            data-i18n="hero.description"
+                        >
+                            O desenvolvedor Nicolas Henrique usa seu domínio
+                            em Python e IA para criar sites e aplicativos
+                            inovadores, focado em impulsionar o futuro da
+                            tecnologia.
+                        </p>
+
+                    </div>
+
+
+                    <div class="Nicolas__socials">
+
+                        <a
+                            href="https://www.instagram.com/nilasnooff/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/nicolas-henrique-b53418402/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                        >
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a
+                            href="https://github.com/nicolassHUB"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                        >
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
             </div>
+
+        </section>
+
+
+        <!-- SOBRE -->
+
+        <section
+            class="about__section"
+            id="sobre"
+        >
+
+            <div class="Nicolas__about">
+
+                <div class="Nicolas__img">
+
+                    <img
+                        src="assets/n.png"
+                        alt="Nicolas"
+                    >
+
+                </div>
+
+
+                <div class="about__desc">
+
+                    <h1 data-i18n="about.title">
+                        DESENVOLVEDOR DE SOFTWARE
+                    </h1>
+
+                    <p data-i18n="about.description">
+                        Sou Nicolas Henrique, tenho 20 anos e curso Análise
+                        e Desenvolvimento de Sistemas na PUC Minas.
+                        Sou fascinado por tecnologia, procuro dominar Python
+                        e focado em criar sites, aplicativos e soluções com
+                        Inteligência Artificial.
+                        Busco sempre evoluir participando de palestras e
+                        projetos práticos para transformar ideias em códigos
+                        eficientes.
+                    </p>
+
+                    <button
+                        onclick="window.open('assets/Curriculo de Nicolas.pdf')"
+                        class="Nicolas__button"
+                        data-i18n="about.resume"
+                    >
+                        CURRÍCULO
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJETOS -->
+
+        <section
+            class="projetos__section"
+            id="projetos"
+        >
+
+            <div class="Nicolas__projetos">
+
+                <h1 data-i18n="projects.title">
+                    MELHORES PROJETOS
+                </h1>
+
+
+                <div class="projetos__column">
+
+                    <!-- PROJETO 1 -->
+
+                    <div class="projeto__card">
+
+                        <div class="projeto__bg">
+
+                            <img
+                                class="projeto__img"
+                                src="assets/marvels_spider_man_2_peter_parke.width-1000.format-webp.webp"
+                                alt="Projeto"
+                            >
+
+                        </div>
+
+                        <h4 data-i18n="project1.category">
+                            APLICATIVO - ANDAMENTO
+                        </h4>
+
+                        <p data-i18n="project1.description">
+                            A história do Quarteto Fantástico com o
+                            Pantera Negra e Wakanda, explicada.
+                        </p>
+
+                    </div>
+
+
+                    <!-- PROJETO 2 -->
+
+                    <div class="projeto__card">
+
+                        <div class="projeto__bg">
+
+                            <img
+                                class="projeto__img"
+                                src="assets/marvels_spider_man_2_peter_parke.width-1000.format-webp.webp"
+                                alt="Projeto"
+                            >
+
+                        </div>
+
+                        <h4 data-i18n="project2.category">
+                            LANDING PAGE
+                        </h4>
+
+                        <p data-i18n="project2.description">
+                            A história do Quarteto Fantástico com o
+                            Pantera Negra e Wakanda, explicada.
+                        </p>
+
+                    </div>
+
+
+                    <!-- PROJETO 3 -->
+
+                    <div class="projeto__card">
+
+                        <div class="projeto__bg">
+
+                            <img
+                                class="projeto__img"
+                                src="assets/marvels_spider_man_2_peter_parke.width-1000.format-webp.webp"
+                                alt="Projeto"
+                            >
+
+                        </div>
+
+                        <h4 data-i18n="project3.category">
+                            LANDING PAGE
+                        </h4>
+
+                        <p data-i18n="project3.description">
+                            A história do Quarteto Fantástico com o
+                            Pantera Negra e Wakanda, explicada.
+                        </p>
+
+                    </div>
+
+
+                    <!-- PROJETO 4 -->
+
+                    <div class="projeto__card">
+
+                        <div class="projeto__bg">
+
+                            <img
+                                class="projeto__img"
+                                src="assets/marvels_spider_man_2_peter_parke.width-1000.format-webp.webp"
+                                alt="Projeto"
+                            >
+
+                        </div>
+
+                        <h4 data-i18n="project4.category">
+                            LANDING PAGE
+                        </h4>
+
+                        <p data-i18n="project4.description">
+                            A história do Quarteto Fantástico com o
+                            Pantera Negra e Wakanda, explicada.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTATO -->
+
+        <section
+            class="contato__section"
+            id="contato"
+        >
+
+            <div class="Nicolas__contato">
+
+                <p class="contato__titulo">
+                    NICOLAS HENRIQUE
+                </p>
+
+
+                <h3 data-i18n="contact.title">
+                    Gostou do meu trabalho?
+                    <br>
+                    Vamos criar algo incrível juntos!
+                </h3>
+
+
+                <p
+                    class="contato__descricao"
+                    data-i18n="contact.description"
+                >
+                    Estou disponível para novos projetos, freelas e
+                    parcerias. Escolha o melhor canal para conversarmos.
+                </p>
+
+
+                <a
+                    href="https://wa.me/5531987164020"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="Nicolas__button"
+                    data-i18n="contact.button"
+                >
+                    CONTRATAR
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer__area">
+
+        <div class="Nicolas__footer">
+
+            <div class="footer__nav">
+
+                <a
+                    href="#inicio"
+                    data-i18n="nav.home"
+                >
+                    INÍCIO
+                </a>
+
+                <a
+                    href="#sobre"
+                    data-i18n="nav.about"
+                >
+                    SOBRE
+                </a>
+
+                <a
+                    href="#projetos"
+                    data-i18n="nav.projects"
+                >
+                    PROJETOS
+                </a>
+
+                <a
+                    href="#contato"
+                    data-i18n="nav.contact"
+                >
+                    CONTATO
+                </a>
+
+            </div>
+
+
             <div class="socials__column">
-                <h4>SIGA NICOLAS</h4>
+
+                <h4 data-i18n="footer.follow">
+                    SIGA NICOLAS
+                </h4>
+
+
                 <div class="footer__socials">
-                    <a href="https://www.instagram.com/nilasnooff/" target="_blank" aria-label="Instagram">
+
+                    <a
+                        href="https://www.instagram.com/nilasnooff/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                    >
                         <i class="fa-brands fa-instagram"></i>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/nicolas-henrique-b53418402/" target="_blank" aria-label="LinkedIn">
+                    <a
+                        href="https://www.linkedin.com/in/nicolas-henrique-b53418402/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                    >
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
 
-                    <a href="https://github.com/nicolassHUB" target="_blank" aria-label="GitHub">
+                    <a
+                        href="https://github.com/nicolassHUB"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                    >
                         <i class="fa-brands fa-github"></i>
                     </a>
+
                 </div>
+
             </div>
+
         </div>
+
     </footer>
+
+
     <script src="home.js"></script>
+
 </body>
+
 </html>
