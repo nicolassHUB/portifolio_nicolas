@@ -11,9 +11,11 @@
 html {
     width: 100%;
     overflow-x: hidden;
-
     scroll-behavior: smooth;
     scroll-padding-top: 60px;
+
+    /* FORÇA O NAVEGADOR A USAR TEMA CLARO */
+    color-scheme: light;
 }
 
 body {
@@ -28,10 +30,6 @@ body {
 
     background-color: var(--bg-principal);
     color: var(--texto-principal);
-
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
 }
 
 section {
@@ -45,39 +43,57 @@ a {
 
 /* =========================================================
    ROOT
-   LIGHT = TEMA PRINCIPAL DO SITE
+   TEMA ÚNICO DO SITE
+   NÃO MUDA COM O DARK MODE DO DISPOSITIVO
 ========================================================= */
 
 :root {
+    color-scheme: light;
 
-    /* ROXO */
+    /* =====================================================
+       ROXO
+    ===================================================== */
 
     --roxo: #7c3aed;
     --roxo-escuro: #5b21b6;
 
 
-    /* FUNDOS */
+    /* =====================================================
+       FUNDOS
+    ===================================================== */
 
     --bg-principal: #ffffff;
+
     --bg-secundario: #151515;
+
     --bg-terciario: #202020;
+
     --bg-hero: #0f0f0f;
+
     --bg-card: #151515;
 
 
-    /* TEXTOS */
+    /* =====================================================
+       TEXTOS
+    ===================================================== */
 
     --texto-principal: #000000;
+
     --texto-secundario: #777777;
+
     --texto-claro: #ffffff;
 
 
-    /* BORDAS */
+    /* =====================================================
+       BORDAS
+    ===================================================== */
 
     --borda: #2a2a2a;
 
 
-    /* FONTES */
+    /* =====================================================
+       FONTES
+    ===================================================== */
 
     --font-titulo:
         "Roboto Condensed",
@@ -94,36 +110,11 @@ a {
         sans-serif;
 
 
-    /* CONTAINER */
+    /* =====================================================
+       CONTAINER
+    ===================================================== */
 
     --container: 1200px;
-}
-
-
-/* =========================================================
-   DARK MODE
-   SOMENTE QUANDO O SISTEMA DA PESSOA ESTIVER EM DARK
-========================================================= */
-
-@media (prefers-color-scheme: dark) {
-
-    :root {
-
-        --bg-principal: #0f0f0f;
-        --bg-secundario: #151515;
-        --bg-terciario: #202020;
-        --bg-hero: #080808;
-        --bg-card: #151515;
-
-        --texto-principal: #ffffff;
-        --texto-secundario: #a1a1aa;
-        --texto-claro: #ffffff;
-
-        --borda: #2a2a2a;
-
-        --roxo: #8b5cf6;
-        --roxo-escuro: #6d28d9;
-    }
 }
 
 
@@ -802,7 +793,9 @@ p,
     }
 
 
-    /* HERO */
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .Nicolas__hero {
         width: 100%;
@@ -847,7 +840,9 @@ p,
     }
 
 
-    /* SOBRE */
+    /* =====================================================
+       SOBRE
+    ===================================================== */
 
     .about__section {
         min-height: auto;
@@ -899,7 +894,9 @@ p,
     }
 
 
-    /* PROJETOS */
+    /* =====================================================
+       PROJETOS
+    ===================================================== */
 
     .projetos__section {
         padding: 30px;
@@ -924,7 +921,9 @@ p,
     }
 
 
-    /* FOOTER */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     .Nicolas__footer {
         width: 100%;
@@ -963,7 +962,9 @@ p,
     }
 
 
-    /* MENU */
+    /* =====================================================
+       MENU
+    ===================================================== */
 
     .box__bar {
         position: relative;
@@ -986,7 +987,6 @@ p,
 
         cursor: pointer;
     }
-
 
     .Nicolas__navigation {
         position: fixed;
@@ -1017,11 +1017,9 @@ p,
         transition: transform 0.3s ease;
     }
 
-
     .Nicolas__header.menu-open .Nicolas__navigation {
         transform: translateX(0);
     }
-
 
     .Nicolas__navigation > a {
         width: 100%;
@@ -1044,7 +1042,9 @@ p,
     }
 
 
-    /* X */
+    /* =====================================================
+       X
+    ===================================================== */
 
     .Nicolas__header.menu-open .box__bar {
         position: fixed;
@@ -1061,7 +1061,9 @@ p,
     }
 
 
-    /* HERO */
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .Nicolas__hero {
         padding-left: 15px;
@@ -1069,7 +1071,9 @@ p,
     }
 
 
-    /* SOBRE */
+    /* =====================================================
+       SOBRE
+    ===================================================== */
 
     .Nicolas__about {
         padding-left: 15px;
@@ -1077,7 +1081,9 @@ p,
     }
 
 
-    /* PROJETOS */
+    /* =====================================================
+       PROJETOS
+    ===================================================== */
 
     .projetos__section {
         padding-left: 15px;
@@ -1085,7 +1091,9 @@ p,
     }
 
 
-    /* SCROLLBAR */
+    /* =====================================================
+       SCROLLBAR
+    ===================================================== */
 
     ::-webkit-scrollbar {
         width: 5px;
