@@ -189,10 +189,117 @@ function translatePage() {
 
 
 /* =========================================================
+   MENU MOBILE
+========================================================= */
+
+function initMobileMenu() {
+
+    const header = document.querySelector(".Nicolas__header");
+    const menuButton = document.querySelector(".box__bar");
+    const navigation = document.querySelector(".Nicolas__navigation");
+
+    /* Se algum elemento não existir, não executa */
+
+    if (!header || !menuButton || !navigation) {
+        return;
+    }
+
+
+    /* =====================================================
+       ABRIR / FECHAR MENU
+    ===================================================== */
+
+    menuButton.addEventListener("click", function () {
+
+        const isOpen =
+            header.classList.toggle("menu-open");
+
+        /* Atualiza acessibilidade */
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+    });
+
+
+    /* =====================================================
+       FECHAR AO CLICAR EM UM LINK
+    ===================================================== */
+
+    const navigationLinks =
+        navigation.querySelectorAll("a");
+
+    navigationLinks.forEach(link => {
+
+        link.addEventListener("click", function () {
+
+            header.classList.remove("menu-open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        });
+
+    });
+
+
+    /* =====================================================
+       FECHAR COM ESC
+    ===================================================== */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            header.classList.remove("menu-open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+    });
+
+
+    /* =====================================================
+       FECHAR MENU SE VOLTAR PARA DESKTOP
+    ===================================================== */
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 600) {
+
+            header.classList.remove("menu-open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
    INICIAR
 ========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
-    translatePage
+    function () {
+
+        translatePage();
+
+        initMobileMenu();
+
+    }
 );
