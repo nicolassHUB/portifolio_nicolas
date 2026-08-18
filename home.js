@@ -33,17 +33,32 @@ const translations = {
         "projects.title":
             "Melhores Projetos",
 
+
+        /* =================================================
+           PROJETO 1 — TASKFORGE
+        ================================================= */
+
         "project1.category":
-            "Aplicativo - Andamento",
+            "TaskForge - Em andamento",
 
         "project1.description":
-            "A história do Quarteto Fantástico com o Pantera Negra e Wakanda, explicada.",
+            "Sistema para organizar projetos e tarefas, com API e banco de dados para gerenciar informações.",
+
+
+        /* =================================================
+           PROJETO 2 — PORTFÓLIO
+        ================================================= */
 
         "project2.category":
-            "Landing Page",
+            "Portfólio - Landing Page",
 
         "project2.description":
-            "A história do Quarteto Fantástico com o Pantera Negra e Wakanda, explicada.",
+            "Portfólio pessoal criado para apresentar meus projetos, habilidades e evolução como desenvolvedor.",
+
+
+        /* =================================================
+           PROJETO 3
+        ================================================= */
 
         "project3.category":
             "Landing Page",
@@ -51,11 +66,21 @@ const translations = {
         "project3.description":
             "A história do Quarteto Fantástico com o Pantera Negra e Wakanda, explicada.",
 
+
+        /* =================================================
+           PROJETO 4
+        ================================================= */
+
         "project4.category":
             "Landing Page",
 
         "project4.description":
             "A história do Quarteto Fantástico com o Pantera Negra e Wakanda, explicada.",
+
+
+        /* =================================================
+           CONTATO
+        ================================================= */
 
         "contact.title":
             "Gostou do meu trabalho? Vamos criar algo incrível juntos!",
@@ -100,17 +125,32 @@ const translations = {
         "projects.title":
             "Best Projects",
 
+
+        /* =================================================
+           PROJECT 1 — TASKFORGE
+        ================================================= */
+
         "project1.category":
-            "Application - In Progress",
+            "TaskForge - In Progress",
 
         "project1.description":
-            "The story of the Fantastic Four with Black Panther and Wakanda, explained.",
+            "A system for organizing projects and tasks, with an API and database for managing information.",
+
+
+        /* =================================================
+           PROJECT 2 — PORTFOLIO
+        ================================================= */
 
         "project2.category":
-            "Landing Page",
+            "Portfolio - Landing Page",
 
         "project2.description":
-            "The story of the Fantastic Four with Black Panther and Wakanda, explained.",
+            "Personal portfolio created to showcase my projects, skills and growth as a developer.",
+
+
+        /* =================================================
+           PROJECT 3
+        ================================================= */
 
         "project3.category":
             "Landing Page",
@@ -118,11 +158,21 @@ const translations = {
         "project3.description":
             "The story of the Fantastic Four with Black Panther and Wakanda, explained.",
 
+
+        /* =================================================
+           PROJECT 4
+        ================================================= */
+
         "project4.category":
             "Landing Page",
 
         "project4.description":
             "The story of the Fantastic Four with Black Panther and Wakanda, explained.",
+
+
+        /* =================================================
+           CONTACT
+        ================================================= */
 
         "contact.title":
             "Did you like my work? Let's create something amazing together!",
@@ -146,7 +196,8 @@ const translations = {
 
 function getLanguage() {
 
-    const language = navigator.language.toLowerCase();
+    const language =
+        navigator.language.toLowerCase();
 
     if (language.startsWith("en")) {
         return "en";
@@ -164,22 +215,30 @@ function translatePage() {
 
     const language = getLanguage();
 
-    const elements = document.querySelectorAll("[data-i18n]");
+    const elements =
+        document.querySelectorAll("[data-i18n]");
 
     elements.forEach(element => {
 
-        const key = element.dataset.i18n;
+        const key =
+            element.dataset.i18n;
 
-        const translation = translations[language]?.[key];
+        const translation =
+            translations[language]?.[key];
 
         if (translation) {
-            element.textContent = translation;
+
+            element.textContent =
+                translation;
+
         }
 
     });
 
 
-    /* Atualiza o idioma do HTML */
+    /* =====================================================
+       ATUALIZAR IDIOMA DO HTML
+    ===================================================== */
 
     document.documentElement.lang =
         language === "en"
@@ -194,13 +253,25 @@ function translatePage() {
 
 function initMobileMenu() {
 
-    const header = document.querySelector(".Nicolas__header");
-    const menuButton = document.querySelector(".box__bar");
-    const navigation = document.querySelector(".Nicolas__navigation");
+    const header =
+        document.querySelector(".Nicolas__header");
 
-    /* Se algum elemento não existir, não executa */
+    const menuButton =
+        document.querySelector(".box__bar");
 
-    if (!header || !menuButton || !navigation) {
+    const navigation =
+        document.querySelector(".Nicolas__navigation");
+
+
+    /* =====================================================
+       VERIFICAR ELEMENTOS
+    ===================================================== */
+
+    if (
+        !header ||
+        !menuButton ||
+        !navigation
+    ) {
         return;
     }
 
@@ -209,19 +280,23 @@ function initMobileMenu() {
        ABRIR / FECHAR MENU
     ===================================================== */
 
-    menuButton.addEventListener("click", function () {
+    menuButton.addEventListener(
+        "click",
+        function () {
 
-        const isOpen =
-            header.classList.toggle("menu-open");
+            const isOpen =
+                header.classList.toggle("menu-open");
 
-        /* Atualiza acessibilidade */
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            isOpen
-        );
+            /* Atualizar acessibilidade */
 
-    });
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+        }
+    );
 
 
     /* =====================================================
@@ -231,18 +306,24 @@ function initMobileMenu() {
     const navigationLinks =
         navigation.querySelectorAll("a");
 
+
     navigationLinks.forEach(link => {
 
-        link.addEventListener("click", function () {
+        link.addEventListener(
+            "click",
+            function () {
 
-            header.classList.remove("menu-open");
+                header.classList.remove(
+                    "menu-open"
+                );
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-        });
+            }
+        );
 
     });
 
@@ -251,40 +332,50 @@ function initMobileMenu() {
        FECHAR COM ESC
     ===================================================== */
 
-    document.addEventListener("keydown", function (event) {
+    document.addEventListener(
+        "keydown",
+        function (event) {
 
-        if (event.key === "Escape") {
+            if (event.key === "Escape") {
 
-            header.classList.remove("menu-open");
+                header.classList.remove(
+                    "menu-open"
+                );
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
 
         }
-
-    });
+    );
 
 
     /* =====================================================
-       FECHAR MENU SE VOLTAR PARA DESKTOP
+       FECHAR AO VOLTAR PARA DESKTOP
     ===================================================== */
 
-    window.addEventListener("resize", function () {
+    window.addEventListener(
+        "resize",
+        function () {
 
-        if (window.innerWidth > 600) {
+            if (window.innerWidth > 600) {
 
-            header.classList.remove("menu-open");
+                header.classList.remove(
+                    "menu-open"
+                );
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
 
         }
-
-    });
+    );
 
 }
 
